@@ -1,0 +1,9 @@
+# Add to GitHub Actions workflow
+- name: Scan for vulnerabilities
+  uses: aquasecurity/trivy-action@master
+  with:
+    image-ref: ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
+    format: 'table'
+    exit-code: '1'
+    ignore-unfixed: true
+    severity: 'CRITICAL,HIGH'

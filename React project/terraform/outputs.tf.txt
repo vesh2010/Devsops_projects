@@ -1,0 +1,24 @@
+output "cluster_name" {
+  description = "EKS cluster name"
+  value       = module.eks.cluster_name
+}
+
+output "cluster_endpoint" {
+  description = "Endpoint for EKS control plane"
+  value       = module.eks.cluster_endpoint
+}
+
+output "db_endpoint" {
+  description = "RDS instance endpoint"
+  value       = module.db.db_instance_endpoint
+}
+
+output "vpc_id" {
+  description = "ID of the VPC"
+  value       = module.vpc.vpc_id
+}
+
+output "load_balancer_hostname" {
+  description = "The LB hostname that will be available after deploying the application"
+  value       = "Will be available after application deployment"
+} 
